@@ -39,6 +39,10 @@ How each Cambrian evaluation mechanism maps to a defensible academic method.
 
 ## Known methodological debts (do not hide these)
 
+- Pin the resource envelope + time-of-day for every benchmark run (Segato
+  2026: uncapped beats 1× by 6pp; gaps <3pp deserve skepticism). Add to
+  every freeze row.
+
 - Routing metrics keep auction-era names (`bid_dispersion`,
   `candidates_per_auction`) — explain, don't rename silently.
 - Some suites predate fixes (e.g. pre-2026-08-08 `scout_usefulness` keys are

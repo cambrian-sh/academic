@@ -61,6 +61,8 @@ See `papers/related-work-draft.md` §1 (promote to prose here at draft v0.2).
 | 6 | Multi-signal ranking contribution + cost | ablation grid (proposal 02) | ❌ needs kernel arms |
 | 7 | Provenance costs ~3% loaded; hot-path TBD | 2026-08-06 A/B/A (+210–250 ms mean); hot-path arm open | 🔨 half measured (proposal 04 rescoped) |
 | 8 | Utility×security Pareto + over-refusal taxonomy | policy-asks arms + calibration | ❌ blocked on live runs |
+| 9 | Graph-signal reproduction (B8 negative) | chunking/document-qa/musique matched-budget runs | ❌ needs kernel; flagship-gating |
+| 10 | Consolidation measurement (AFTER instrument) | LoCoMo before/after + ExpeL/AutoGuide arms | ❌ blocked on ADR-0094/0095 build |
 
 ## 6. Honest limits (write fully — reviewers reward this)
 
@@ -70,6 +72,12 @@ See `papers/related-work-draft.md` §1 (promote to prose here at draft v0.2).
 - Auction-era metric names kept for archive comparability.
 - Operator-plane reads unscoped (SystemPrincipal); namespace hardcoded `default`.
 - Substrate lane has no `policy_note` (silence expected, reported as residual).
+- Graph signal contested: Selective Forgetting (2608.28978) measured graph
+  losing to flat baseline on LongMemEval at matched budget — reproduce on
+  chunking/document-qa/musique before review; mechanism (entity
+  decomposition discards surface form) argues for verbatim Evidence.
+- Per-write validation insufficient as memory-safety story (Salami
+  coalitions, SPORE egress bypass); scope claims bounded accordingly.
 
 ## 7. Conclusion
 

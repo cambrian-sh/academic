@@ -15,7 +15,13 @@ filter → rerank) with multi-signal ranking (ADR-0054) over per-chunk triplets
 (Xiao 2506.02404; Xiang 2506.05690), Microsoft GraphRAG, LightRAG/HippoRAG
 family, STARK.
 
-## Design
+## Design (updated 2026-10-02)
+
+- B8 control (Selective Forgetting, `selectiveforget2026`): the ablation
+  must include a graph-pruning arm AND a flat-baseline arm at matched
+  budget — the negative result is the alternative hypothesis, not an
+  afterthought. MemTree (`memtree2024`) as the middle tier between static
+  hierarchy and flat store.
 
 - **Arms:** full stack; minus reranker; minus KG-expansion; vector-only;
   FTS-only; KG-only. Pre-registered grid, same frozen corpus + embedder.

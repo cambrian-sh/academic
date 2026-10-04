@@ -23,7 +23,18 @@ ICLR 2026 contrast arms: Conductor (learned RL routing), GraphPlanner
 (MDP routing on graph memory), DiSRouter (no-external-gate self-routing);
 RouterArena + OrchestrationBench as external scoring harnesses.
 
-## Design
+## Design (updated 2026-10-02 — reframed per routing-cost sweep)
+
+Per `notes/routing-cost-2026-10-01.md` §0: the defensible headline is
+**routing-decision overhead** — marginal tokens/latency the selection step
+itself consumes — not task-level cost. `LLM calls and tokens per selection
+= 0` is promoted from expected value to PRIMARY result; everything else is
+a Pareto point at matched tokens (Tran & Kiela DPI confound). Full arm
+table P1–P12 (token-normalised control, workflow-measured cost,
+harness-only control, LLM-router, learned routers, cascade, deliberate
+test-time compute, retrieval-filtered slate, protocol accounting,
+round-replicated measurement, sham control, framework cost table) lives in
+the notes file; implement P1–P4 + P11 first.
 
 - **Control:** auction-era archived runs (pre-ADR-0100), with the metric-name
   caveat documented, not renamed.

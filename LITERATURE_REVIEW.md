@@ -81,6 +81,35 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   beyond task success; feeds topic 1's metric gap. arXiv:2503.01935
 - ✅ Wu et al., "AutoGen" (COLM 2024) — required framework comparator.
   arXiv:2308.08155
+- ✅ Kim et al., "Towards a science of scaling agent systems" (Google,
+  2026-01-28) — 180 configs: centralized +80.9% parallelizable but −39–70%
+  sequential; error amplification 17.2× independent vs 4.4× centralized;
+  R²=0.513 architecture predictor (87% unseen). Anchor paper for topic 1
+  AND the sharpest critique of LLM-routing-scales. arXiv:2512.08296
+- ✅ Cognition (Yan, 2025-06-12), "Don't Build Multi-Agents" — delegation
+  must carry decision context (full traces; actions carry implicit
+  decisions); critical of Swarm/AutoGen. Supports typed capability
+  envelopes with receipts. https://cognition.ai/blog/dont-build-multi-agents
+- ✅ Anthropic, "Building effective agents" (2024-12-19) — pattern taxonomy
+  (workflows → agents); optimize tools over prompt; cite as taxonomy, not
+  current architecture (superseded note points to Managed Agents).
+  https://www.anthropic.com/engineering/building-effective-agents
+- ✅ Anthropic, "How we built our multi-agent research system" (2026-06-13)
+  — orchestrator-worker in production; +90.2% over single-agent; tokens
+  explain 80% of BrowseComp variance; 15× chat-token cost; end-state eval,
+  durable execution, memory-overflow patterns. Industry anchor for
+  dispatch economics + harness methodology.
+  https://www.anthropic.com/engineering/multi-agent-research-system
+- 🔍 Gorinova et al., "Position: Coding Benchmarks Are Misaligned with
+  Agentic Software Engineering" — SWE-bench Pro over Verified, Terminal-Bench
+  as frontier standard, scaffold-variance and infra-noise quantification;
+  snowball its bibliography next. (ID 2606.17799 seen on paper page,
+  authors confirmed via API — provisionally verified.)
+- 🔍 ReasoningBank (Google, Yan & Lee, 2026-04-21) — success+failure
+  experience distillation; checklist→compositional-logic maturation;
+  +8.3% WebArena / +4.6% SWE-Verified. Prior art for topic 10; paper ID
+  unconfirmed (blog verified).
+  https://research.google/blog/reasoningbank-enabling-agents-to-learn-from-experience
 - ✅ Nielsen et al., "Conductor" (ICLR 2026 Poster) — RL-trained 7B
   conductor learning topologies + role placement; sharpest contrast for the
   Zero-Hardcode Rule (LLM-side learned routing vs zero-RPC merit rank).
@@ -93,9 +122,82 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Lu et al., "RouterArena" (ICLR 2026 Poster) — router-eval
   fragmentation + standard dataset/metric suite; external-harness candidate
   alongside OrchestrationBench. OpenReview 10011126
-- 🔍 AutoGen / CrewAI / LangGraph framework benchmarks (AIMultiple 22-framework
-  comparison: LangGraph fastest, CrewAI slowest) — industry baselines; confirm
-  citable versions.
+- ✅ Token-normalisation cluster (all title-verified; full arm table P1–P12
+  in `notes/routing-cost-2026-10-01.md` §9): Tran & Kiela single-beats-multi
+  at matched thinking tokens via DPI (arXiv:2604.02460) — the confound
+  authority; RLM-Cascade rule-based O(1) zero-call router carving out
+  tool-selection turns, −45.8% cost on Claude Code traces (arXiv:2606.22840)
+  — independently arrived capability-typing, strongest competitor;
+  InflationAgent token inflation 4.25× vs 1.31×, per-token estimates understate
+  >2× (arXiv:2608.13571) — measure cost from row traces; Harness Effect
+  −41% cost/task from orchestration alone (arXiv:2607.06906) — mandates a
+  harness-only control; BAMAS ILP+RL provisioning, 86% cut at parity with
+  framework cost table (AAAI 2026 Oral, DOI 10.1609/aaai.v40i35.40226).
+- ✅ Router family: RouteLLM (2406.18665), RouterBench+AIQ (2403.12031),
+  AutoMix (2310.12963, NeurIPS 2024), HybridLLM (2404.14618, ICLR 2024),
+  RouterDC (2409.19886, NeurIPS 2024), Zooter (2311.08692), Meta-Router
+  causal debias (2509.25535, ICLR 2026), Router-R1 LLM-that-routes
+  (2506.09033, NeurIPS 2025), BaRP bandit feedback (2510.07429),
+  ICL-Router (2510.09719), MixLLM tag-conditioned (2502.18482).
+- ✅ Cascades: FrugalGPT (2305.05176), EcoAssistant shrink-the-work
+  (2310.03046), UCCI calibrate-first (2605.18796, −31% at CI),
+  Cluster-Route-Escalate TPOT budgets (2606.27457), CASTER (2601.19793),
+  RouteGuard certification (2608.07583), MTRouter turn-level budgets
+  (2604.23530, ACL 2026), BAVT residual-progress scoring (2603.12634),
+  EcoAgent-Bench budgeted tasks (2608.05519).
+- ✅ Test-time compute: self-consistency origin (2203.11171, ICLR 2023),
+  Snell compute-optimality (2408.03314), s1 budget forcing (2501.19393),
+  Best-of-N theory + reward hacking (2503.21878, ICML 2025), PRM/ORM
+  origin (2305.20050), repeated-sampling baseline (2407.21787), "When LLMs
+  Agree" vs confidence-gating (2607.08065), CarBoN calibration (2510.15674).
+- ✅ Protocol/token footprint: ProMCP usage-vs-protocol split, synthesis
+  >85% latency (ACL 2026 Findings); Sadani Tools-Tax −95% (2604.21816,
+  simulated — projections not measurements); scalable MCP-gateway 98%
+  Top-15 @3000 tools (2607.15593) — retrieval-filtered slate arm;
+  descriptor-quality confound study (2602.14878); Reasoning Tax marginal
+  efficiency (2608.26235); OckBench per-token-price inversion (2511.05722).
+- ✅ Cost-spend accounting: 3500× agentic-vs-reasoning tokens, 30×
+  within-task spread (2604.22750) — replicate measurements, never single
+  runs; cost-per-success framing, tokens as trajectory measurements
+  (2608.01347); token shadow-pricing incl. tool latency (2605.09104,
+  framing only).
+- ✅ Plan-then-execute as trust boundary (2026) — all WebArena tasks fit,
+  80% need no runtime LLM; untrusted content sets values/branches but
+  cannot redefine the task; fix is typed auditable APIs. Planner-boundary
+  argument converging with FlowSteer. arXiv:2605.14290 (no venue claimed)
+- ✅ LLM-Modulo (Kambhampati et al., ICML 2024) — peer-reviewed "model
+  proposes, kernel disposes"; sound external critics confer guarantees.
+  PMLR 235:22895-22907. arXiv:2402.01817
+- ✅ LLM-Modulo measured deltas — CoT/ReAct/Reflexion 0–0.6% vs 4.6–6×
+  with critics (travel); provably non-fallacious scheduling outputs.
+  arXiv:2405.20625, arXiv:2411.14484 (venues unconfirmed)
+- ✅ ReWOO — plan with no tool feedback, then execute; interleaving is
+  expensive structurally. arXiv:2305.18323
+- ✅ API-Bank (EMNLP 2023) — Call→Retrieve+Call→Plan+Retrieve+Call ladder;
+  planning pays off only at GPT-4 scale. ACL 2023.emnlp-main.187
+- ✅ Self-correction negatives (TACL 2024; ICLR 2024) + ToolPRM (ACL 2026)
+  — field over-evaluated; intrinsic self-correction fails; near-useless
+  for JSON tool calls. Correction loop belongs in the kernel.
+  arXiv:2406.01297, arXiv:2310.01798, arXiv:2510.14703
+- ✅ LATS (ICML 2024) — MCTS over ReAct doubles HotPotQA; backtracking cost
+  is the contrast arm for zero-RPC dispatch. PMLR 235:62138-62160
+- ✅ ACEBench — isolates instruction ambiguity (`Special`); penalises
+  planner under-specification. arXiv:2501.12851
+- ✅ NESTFUL — nested output-to-input chaining; 28% full-sequence match
+  sobering prior for deep DAGs. arXiv:2409.03797
+- ✅ ComplexFuncBench — `value_error` vs `stop_early` split is the row-trace
+  taxonomy needed. arXiv:2501.10132
+- ✅ FuncBenchGen (ICLR 2026) — hidden function-dependency DAG as task
+  primitive; closest analogue to dag-plans; GPT-5 15% at 20 calls.
+  arXiv:2509.26553 (record verified in notes file; event ID not yet
+  confirmed — add OpenReview ID before submission).
+- ✅ IFEval-FC — schema-prose adherence <80% even frontier models;
+  "parsed the call" vs "honoured the contract" (ADR-0097).
+  arXiv:2509.18420
+- ✅ BFCL peer-reviewed anchor (ICML 2025, PMLR 267:48371-48392) — replaces
+  the blog URL; parallel-call categories; parallel calls mode-dependent.
+- ✅ ToolEyes (COLING 2025) — five-dimension split; upstream
+  planning-vs-selection decomposition.
 
 ## 2. Retrieval, GraphRAG, agent memory (→ substrate flagship, topics 2–3, 6, 10–11)
 
@@ -132,9 +234,66 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Shu et al., "REMem" (ICLR 2026 Poster) — episodic memory as hybrid
   time-aware graph + agentic retriever; direct prior art for topic 10
   consolidation. OpenReview 10008195
+- ✅ Consolidation lineage: Voyager skill library (2305.16291); ExpeL
+  transferable insights, no weight updates (2308.10144, AAAI-24);
+  AutoGuide conditional guidelines (2403.08978); AutoManual rule Builder
+  (2405.16247, NeurIPS 2024); ChemAgent refine-on-read (2501.06590);
+  AFTER skill-transfer benchmark, 382 tasks, cross-model 73.1%
+  (2606.23127) — topic 10's instrument; Skill-as-Pseudocode deterministic
+  four-check gate (2605.27955, EMNLP Findings 2026); Gödel Agent
+  self-modifying upper bound (2410.04444, ACL 2025); LEGOMem placement
+  question (2510.04851); AgentHER hindsight relabelling (2603.21357);
+  SAGE RL consolidation (2512.17102); SkillCenter quality-gate +
+  grounding (2607.07676); critic "Procedural Memory Is Not All You Need"
+  (2505.03434).
+- ✅ Forgetting axis (previously absent): Ebbinghaus primary (DOI
+  10.5214/ans.0972.7531.200408); Craik & Lockhart depth-of-processing
+  refutation (1972); Murre & Dros non-replication (2015); MemoryBank
+  Ebbinghaus implementation as strawman (2305.10250); THEANINE
+  anti-forgetting (2406.10996, NAACL 2025); FSFM safety-motive taxonomy
+  (2604.20300).
+- ✅ Parametric/non-parametric: PEAK append-catastrophe (2401.17623, ICML
+  2024); ECHOQA Supportive/Complementary/Conflicting/Irrelevant taxonomy
+  + parametric suppression (2410.08414) — Resolution-kinds vocabulary;
+  MACR explicit conflict resolution (2606.20245); Memory³ explicit memory
+  cheaper than params and RAG (2407.01178, JML not JMLR); MEMIT best-case
+  parametric arm (2110.11309, ICLR 2022); editing surveys (2305.13172
+  EMNLP 2023; 2310.16218 CSUR); MemTree middle tier (2410.14052).
+- ✅ World models: AriGraph episodic+semantic graph (2407.04363);
+  DiLu rules+reflection (2309.16292, ICLR 2024); COUNTERMEM verified
+  counterfactuals as Resolution home (2609.31874); Ghost in Minecraft
+  lineage (2305.17144); Soar decay ancestor via TOIS survey.
+- ✅ Graph-signal CONTESTED: Selective Forgetting (2608.28978) — graph
+  loses to flat baseline on LongMemEval at matched budget (Δ −0.050,
+  CI [−0.085, −0.016]); mechanism: entity decomposition discards surface
+  form. Must reproduce on chunking/document-qa/musique before review.
+  Counter-case: AriGraph fusion claim.
+- ✅ Generative Agents memory stream (UIST 2023) — flat append-only
+  origin, most-cited memory paper. DOI 10.1145/3586183.3606763
+- ✅ MemSim Bayesian QA generation (2409.20163) — automatic reliable QA
+  from messages; answers METHODOLOGY.md's QA debt. PerLTQA semantic/
+  episodic split (2402.16288); Denning locality principle (CACM 2005)
+  behind tiered memory.
 - ✅ Shao et al., "Misevolve" (ICLR 2026 Poster) — safety degradation after
   memory accumulation; the risk register for self-modifying substrate
   surfaces. OpenReview 10010580
+- ✅ Zep (Rasmussen et al.) — temporal knowledge-graph agent memory.
+  arXiv:2501.13956
+- ✅ Mem0 paper (Chhikara et al.) — production long-term memory; >90% token
+  cost and 91% p95 latency cut vs full context (ceiling for reflexive path).
+  arXiv:2504.19413
+- ✅ Letta, "Memory Blocks" (2025-05-14) — explicit context management
+  blocks. https://www.letta.com/blog/memory-blocks/
+- ✅ Anthropic, "Contextual Retrieval" (2024-09-19) — chunk context cuts
+  top-20 failure 35→67% with BM25+rerank; $1.02/M tokens; negatives
+  reported (summaries ≈ no gain); <200k tokens just use the prompt.
+  https://www.anthropic.com/news/contextual-retrieval
+- ✅ Anthropic, "Effective context engineering" (2025-09-29) — JIT
+  retrieval via identifiers beats pre-inference embedding; compaction vs
+  note-taking vs subagent selection rule; context-rot mechanics.
+  https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
+- ✅ MSR GraphRAG global-search post (Edge et al.) — practice companion to
+  the paper. https://www.microsoft.com/en-us/research/blog/graphrag-improving-global-search-via-dynamic-community-selection/
 - ✅ Bian et al., "TRACE: Accountable Agentic Retrieval for Source Discovery"
   — training-free agentic retrieval for accountable source discovery;
   sibling to ADR-0103 evidence receipts. arXiv:2609.19897 (venue
@@ -157,6 +316,27 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 
 - ✅ GAIA (Mialon et al., 2023, arXiv:2311.12983; 466 tasks, quasi-exact-match
   scoring, humans ~92%) — Cambrian `gaia-tool-use` suite target.
+- ✅ Segato/Anthropic, infrastructure noise in agentic coding evals
+  (2026-02-05) — uncapped beats 1× by 6pp (p<0.01); gaps <3pp deserve
+  skepticism; pin resource envelope + time-of-day. METHODOLOGY.md rule.
+  https://www.anthropic.com/engineering/infrastructure-noise
+- ✅ Tessl Tiles coding-agent eval (2025-11-12) — +35% abstraction adherence,
+  +50% on new packages, 20% faster than source access; supports
+  contract-typed tool surfaces. https://tessl.io/blog/proposed-evaluation-framework-for-coding-agents
+- ✅ Anthropic harness posts (Young 2025-11; Rajasekaran 2026-03) —
+  initializer/feature-list discipline; "context anxiety" (resets beat
+  compaction); generator/evaluator $200/6hr vs $9/20min; harness
+  assumptions go stale per model bump. Re-audit rule for kernel design.
+- ✅ Anthropic Managed Agents (2026-04) — hexagonal runtime from ops pain;
+  session ≠ context window (`getEvents` recoverable object); credential
+  isolation after a prompt-injection token theft; p50 TTFT −60%.
+  Justification for the Substrate/Gatekeeper split + event log as record.
+  https://www.anthropic.com/engineering/managed-agents
+- ✅ Anthropic tool-writing with agents (2025-09) — consolidate tools,
+  25k-token caps, human IDs cut hallucination, ResponseFormat enum
+  206→72 tokens; Claude-optimized tools beat expert-written on held-out.
+- ✅ Sierra τ-bench post — pass^k adoption context (already in §3 via paper).
+  https://sierra.ai/blog/tau-bench-shaping-development-evaluation-agents
 - ✅ Gaia2 / ARE framework (ICLR 2026) — async event-driven reimplementation
   of τ-bench, τ²-bench, GAIA, BFCL-v3; action-level verifier 0.98 agreement
   vs 0.72 LLM-judge; budget-scaling plateau (test-time compute ceiling).
@@ -238,6 +418,50 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   arXiv:2503.00061
 - ✅ Zou et al., PoisonedRAG (USENIX Sec 2024) — write-side poisoning
   baseline the substrate must be measured against. arXiv:2402.07867
+- ✅ Salami/MemCollusion (2608.01637) — individually-benign, jointly
+  harmful memories; falsifies per-write validation as sufficient; threat
+  unit is the coalition. Bounds ADR-0043/0105/0118 claims.
+- ✅ SPORE (2607.23444) — per-user isolation bypassed via tool interface
+  (egress, not store); bounds topic 8 party scoping; chokepoints necessary.
+- ✅ Sleeper poisoning write→retrieve→use schema, 99.8% write / 60–89%
+  steer (2605.15338) — adopt three-stage metrics for memory-guard.
+- ✅ MemMorph tool-hijack via memory (2605.26154, under review) — poisoning
+  memory poisons routing; missing arm in topic-1 threat model.
+- ✅ CAPTURE drift-vs-poisoning disambiguation (2609.02265, NOT ICLR —
+  under review) — recency+provenance insufficient; uncertainty-triggered
+  clarification supports ErrCannotExpress abstain path.
+- ✅ CSUR agent security/privacy survey with cases (2407.19354, CSUR 2025).
+- ✅ MCPTox — first large tool-poisoning measurement on real MCP servers
+  (45 servers/353 tools/20 agents; mean ASR 36.5%, o1-mini 72.8%,
+  refusals <3%; reasoning +27.8pp ASR; IPI payloads ≈0%). The primary
+  ADR-0043 lacked; tool-poisoning is NOT an IPI variant.
+  arXiv:2508.14925 (venue unconfirmed — do not write AAAI 2026)
+- ✅ "When MCP Servers Attack" — only evaluation of scanners: mcp-scan
+  caught 4 poisoned servers; LLM-judge scanners bypassed by subtle text.
+  Measured case against connect-time scanning. arXiv:2509.24272
+- ✅ Parasites in the Toolchain (S&P 2026) — 12 230 tools/1 360 servers,
+  27.2% servers exploitable; root cause named as missing context–tool
+  isolation + least privilege. Strongest statement of the gap tag-algebra
+  fills. arXiv:2509.06572
+- ✅ MSB (ICLR 2026) — NRP security/utility scalar for topic 7; attack
+  stages map onto planner→executor→ingest. OpenReview per notes record
+- ✅ MCP-TDP ("When the Manual Lies") — forensic side-effect verification
+  standard; "Firewall Fallacy" (guardrails raised ASR); familiarity trust
+  (95.2% vs 82.8%) → re-check grants per call, never cache per
+  registration. arXiv:2605.24069
+- ✅ ETDI — cryptographic tool identity, immutable versioned definitions,
+  runtime policy engine; defence lineage for ADR-0043. arXiv:2506.01333
+- ✅ MCP-Universe / MCPVerse / MCPEval / ModelScope MCPBench — live-MCP
+  harnesses; three-tier execution evaluators; 54pp provider spread (MCP ≠
+  reliability); Oracle/Standard/Max-Scale slate ablation. NOTE live
+  name collision: Accenture MCP-Bench (2508.20453) vs ModelScope MCPBench
+  (2504.11094) — distinct bib keys. arXiv:2508.14704, 2508.16260,
+  2507.12806, 2504.11094
+- ✅ FC robustness (TrustNLP@NAACL 2025) — paraphrase + toolkit-expansion
+  degrade; 70–90% of errors are scoring artifacts; bigger slates cost.
+  arXiv:2504.00914
+- ✅ LongFuncEval — 7–91% degradation curves on catalogue/response length;
+  typed addressed references over concatenated schemas. arXiv:2505.10570
 - ✅ OWASP LLM Top-10 (LLM01 prompt injection #1) + Agent Security Bench
   (ICLR 2025: 84% of agents vulnerable, up to 100% mixed-strategy success) —
   quantify the problem statement.
@@ -255,6 +479,12 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   decisions, human gates (OPA/OpenFGA/Zanzibar lineage). This is the
   industry formulation of Cambrian's tag-algebra stance (model proposes,
   kernel disposes) — cite as converging practice.
+- ✅ Cursor sandboxing post — sandboxed agents stop 40% less often:
+  safety as UX win, not tax. https://cursor.com/blog/agent-sandboxing
+- ✅ Anthropic Managed Agents credential finding (2026-04) — prompt
+  injection stealing session-spawning tokens in the coupled design; fixed
+  by structural credential isolation (vault + MCP proxy). Kernel-side
+  enforcement evidence.
 - ✅ Praetorian indirect-injection vs supervisor agents — supervisor blind
   spot when only user messages are inspected; justifies Cambrian's
   kernel-side enforcement (never in the Awareness layer alone).
