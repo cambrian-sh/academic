@@ -23,6 +23,21 @@ ICLR 2026 contrast arms: Conductor (learned RL routing), GraphPlanner
 (MDP routing on graph memory), DiSRouter (no-external-gate self-routing);
 RouterArena + OrchestrationBench as external scoring harnesses.
 
+## Design (updated 2026-10-06 — baselines promoted, token-economics folded)
+
+Baseline pool (all verified; keys in `bib/references.bib`): learned-router
+contrasts ZeroRouter (AAAI 2026, decoupled difficulty latent),
+IRT-Router (ACL 2025, interpretable), ContextualRouter (EACL SRW —
+retrieval suffices, k-NN competitive, supports the cheap-lookup thesis);
+training-free contrast PORT (NeurIPS 2025 per record — the closest
+competitor to the training-free premise); RouterEval as the external
+router benchmark; Rerouting (learned router is an attack surface) for the
+threat-model edge. Metric family: report TES-style gain-per-token alongside
+raw cost (Wani et al., TPCTC 2026). Report capability at model×harness
+configuration level (Harness-Bench). P3 must survive the Arjmandi negative
+(neither harness wins on average) — a dispatch win that vanishes against a
+harness-only control is not a win.
+
 ## Design (updated 2026-10-02 — reframed per routing-cost sweep)
 
 Per `notes/routing-cost-2026-10-01.md` §0: the defensible headline is

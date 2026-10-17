@@ -38,6 +38,11 @@ agreement action-level verification as RLVR signal).
 - **Load:** synthetic retrieval sweep (LLM-free) + cite the 2026-08-06
   LLM-bound numbers as the loaded reference; re-run them only if the kernel
   SHA changed since.
+- **Wiring 2026-10-09:** pin + report the inference serving config with
+  the numbers (stateful KV-cache persistence halves wall time,
+  `norgren2026stateful`; ST-BoN-style early truncation −80% GPU mem,
+  `wang2025stbon` — either drifting between arms voids the comparison).
+  Report at model×harness configuration level (`yao2026harnessbench`).
 
 ## Apparatus
 

@@ -52,6 +52,11 @@ checks, auditable decisions (Zanzibar/OpenFGA lineage).
 - **Metrics:** task success, recall@k under policy, deny precision/recall,
   over-refusal rate, `policy_note` explanation quality (human-graded sample),
   latency overhead of enforcement.
+- **Wiring 2026-10-09:** A2+ arm design informed by the usage-vs-generation
+  split + messy/clean memory profiles (`letta2026prodmemory`); the 10
+  rephrasing families mirror the adversarial-auditor pattern, with its
+  multi-turn-reversion warning (`letta2026redteam`) — single-turn probes
+  under-test robustness, so scope a multi-turn follow-up arm.
 
 ## Apparatus
 

@@ -1,9 +1,12 @@
-# Related Work (draft v0.2 — 2026-10-02)
+# Related Work (draft v0.3 — 2026-10-06)
 
 Covers the flagship substrate paper + dispatch and security satellites.
 Every citation here is ✅-verified (`bib/references.bib`); venue-pending
 items are flagged inline. Keyed to `LITERATURE_REVIEW.md` v0.3 (expanded
 past its version number — treat this draft as the fresher document).
+v0.3 changes: 2026-10-06 debt burn-down (MCPTox/ZeroRouter/ST-BoN/CAS-Spec/
+IRT-Router/ContextualRouter/Soft-SC venues confirmed; 14-title routing
+baseline pool promoted from notes; Letta industry program folded).
 
 ## 1. Flagship: evidence-first knowledge substrate
 
@@ -78,6 +81,23 @@ evidence/projected memory. TRACE (`trace2026`, venue unconfirmed — do not
 cite a venue) is the accountability sibling to evidence receipts
 (ADR-0103).
 
+**Industry memory program (Letta).** MemGPT virtual context management
+(`packer2023memgpt`, arXiv 2310.08560) is the tiered-memory origin behind
+the substrate's hot/cold split; Sleep-time Compute (`lin2025sleeptime`,
+arXiv 2504.13171, ~5× test-time cut) is the offline-consolidation prior
+art for the reflexive path. Sixteen technical reports archived
+(`data/external/letta/`, survey `notes/letta-2026-10-05.md`; cite as
+company blog, never as papers): filesystem-beats-graph on LoCoMo
+(`letta2025filesystem`, 74.0% on gpt-4o-mini — industry leg for the B8
+graph skepticism); skill learning +36.8% rel (`letta2025skilllearning` —
+topic-10 baseline to beat); (θ,C) token-space formalization
+(`letta2025continuallearning` — topic-10 theory anchor); git-versioned
+memory ≈ versioned Resolutions (`letta2026contextrepos`); usage-vs-
+generation split + messy/clean profiles for policy-asks A2+
+(`letta2026prodmemory`); adversarial-audit pattern + multi-turn reversion
+warning (`letta2026redteam`). Gaps Letta leaves open (no policy story, no
+token-normalized cost, no placebo discipline) are our novelty margins.
+
 **Failure and faithfulness analysis.** Per-row `failure_kind` reporting
 follows the validated taxonomy of Cemri et al. (`cemri2025fail`, NeurIPS
 2025) rather than an internal convention; EnConda-bench (`kuang2026enconda`,
@@ -111,7 +131,12 @@ memory-conditioned alternative to deterministic merit rank); DiSRouter
 (`zheng2026disrouter`) removes the external gate entirely (per-agent
 self-routing — the arm Cambrian rejects); RouterArena (`lu2026routerarena`)
 supplies the standardised router-eval suite alongside OrchestrationBench
-(`ahn2026orchbench`).
+(`ahn2026orchbench`). Market-selection evidence bounds the auction
+comparison: MarketBench (`fradkin2026marketbench` — self-assessment is
+the bottleneck for market-style coordination) and Agora (`zhou2026agora`,
+EMNLP 2026 Findings — a confidence-calibrated auction improves or stays
+competitive under matched pools), i.e. the auction steelman is calibrated
+bids, not hand-set semantic ones.
 
 **Cost-aware orchestration.** ProgRouter (`progrouter2026`, EMNLP 2026
 Findings) routes under cost/deadline budgets — the cost-aware contrast to
@@ -142,6 +167,31 @@ ACL 2026), agreement-vs-confidence (`whenagree2026`). Protocol footprint:
 ProMCP usage-vs-protocol split (`promcp2026`, ACL Findings);
 retrieval-filtered slate (`mcpgateway2026`). Spend accounting: 3500×/30×
 spread (`tokenspend2026`).
+Baseline pool (all title-verified 2026-10-06, full keys in bib):
+interpretable IRT routing (`irtrouter2025`, ACL 2025); decoupled
+query-difficulty latent + zero-shot onboarding (`zerorouter2026`,
+AAAI 2026); retrieval-of-past-performance suffices, k-NN competitive
+(`varangot2026contextual`, EACL 2026 SRW — cite as workshop); training-free
+ANN online routing, closest training-free competitor (`wu2025trainingfree`,
+NeurIPS 2025 per record); contrastive learned router
+(`mohammadshahi2024routoo`); preference-dial bandit (`li2025llmbandit`);
+observational-regret causal routing (`tsiourvas2025causalrout`);
+confidence-driven router (`zhang2025uncertrout`); learned-router-as-attack-
+surface (`shafran2025rerouting` — confounder gadgets force escalation,
+perplexity filter fails); meta-model choice, −63% cost
+(`sakota2023flyswat`); router benchmark, 200M records (`routereval2025`);
+subset-not-winner framing (`c2mabv2024`); serving-side expert switching
+(`meswitch2024`, tech report); tensor-operator routing (`torouter2024`).
+Test-time negatives: verifier-free breadth-depth refinement beats wider
+sampling (`refining2026`, submitted EMNLP 2026); inference-scaling survey,
+benefits diminish with complexity (`balachandran2025itscaling`).
+Speculative/cascade family: ST-BoN truncates from early-state consistency,
+−80% GPU mem (`wang2025stbon`, NeurIPS 2025); CAS-Spec dynamic tree cascade,
+1.1–2.3× (`ning2025casspec`, NeurIPS 2025); early-exit drafter
+(`liu2024eesd`, ACL 2024 Findings); vertical+horizontal cascades
+(`chen2023csdrafting`, NeurIPS 2024 — corrects the "2023" year in
+CAS-Spec's bibliography); stateful KV-cache inference, halves wall time
+(`norgren2026stateful`).
 Industry anchors: Anthropic multi-agent post
 (`anthropic2025multiagent` — +90.2%, tokens explain 80%, 15× cost);
 Cognition counter-case (`cognition2025nomulti`); Google scaling science
@@ -149,6 +199,12 @@ Cognition counter-case (`cognition2025nomulti`); Google scaling science
 amplification); Anthropic harness/managed-agents/tool posts
 (`segato2026noise`, `anthropic2026managed`); Zep/Mem0 production memory
 (`rasmussen2025zep`, `chhikara2025mem0`).
+Token economics as a field: first survey (`chen2026tokenecon`) and
+Trilemma agenda (`wu2026tokenecon`); TES gain-per-token metric
+(`wani2026reasoningtax`, TPCTC 2026); Harness-Bench configuration-level
+reporting (`yao2026harnessbench`); the paired-contrast negative neither-
+harness-wins (`arjmandi2026harnessmodel`) that any dispatch claim must
+survive.
 
 **Planner boundary.** Plan-then-execute as trust boundary
 (`planexecute2026`: 80% of WebArena programmatic; untrusted content sets
@@ -180,8 +236,9 @@ must bind queries, not just mutations; Qi et al. extraction
 Agent-to-agent: Prompt Infection (`lee2024promptinfection`); orchestration
 layer: Jha et al. control-flow hijacking (ICLR 2026, OpenReview 10009684)
 — the dispatch-layer complement. Write side: PoisonedRAG
-(`arXiv:2402.07867` — poisoning baseline; full bib entry pending, add
-before submission).
+(`zou2024poisonedrag`, USENIX Security 2025 — 90% ASR with 5 texts) as the
+poisoning baseline; MCPTox (`mcptox2025`, AAAI 2026 — tool-poisoning is NOT
+an IPI variant, refusals <3%) as the tool-registration complement.
 Problem size: OWASP LLM01 + Agent Security Bench (84% vulnerable).
 Conceptual frame: He & Yu cognitive serializability (`he2026commit`).
 
@@ -194,9 +251,19 @@ Conceptual frame: He & Yu cognitive serializability (`he2026commit`).
 - ICLR 2026 exhausted for orchest*/rout*/memory/trajectory AND
   verifier/rubric/judge axes (four passes); unique count ~5 468 (223 Oral
   duplicates); placebo axis dead at ICLR — do not spend a fifth pass.
-- MCPTox venue unconfirmed (no "AAAI 2026"); MCP-Bench name collision
+- MCPTox venue CONFIRMED (AAAI 2026, `mcptox2025`); ZeroRouter/ST-BoN/
+  CAS-Spec/IRT-Router/ContextualRouter/Soft-SC venues confirmed 2026-10-06
+  (see bib). MCP-Bench name collision
   (Accenture 2508.20453 vs ModelScope 2504.11094 — distinct keys);
   CAPTURE not ICLR; Memory³ is JML not JMLR; no NesTools/RCI papers exist.
+- Still open (external-brief items): FuncBenchGen OpenReview forum ID
+  (venue confirmed, ID missing); ResPol-2026 effect sign (closed access,
+  no abstract in Crossref/OpenAlex/S2 — needs institutional access);
+  "Difficulty-Aware Hybrid Routing" arXiv ID (no record found);
+  "More is not always better?" routing-over-scaling paper (candidates
+  2605.05716/2501.04070 rejected on authors+topic); "Causal Meta-learners"
+  routing paper (2503.10657 proved to be RouterEval — title/ID mismatch in
+  citing bibliography; paper has no confirmed ID).
 
 ## 4. Open-core case study (topic 13) — literature frame
 

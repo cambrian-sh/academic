@@ -30,6 +30,13 @@ family, STARK.
 - **Metrics:** recall@10, precision@10, hit-rate@10 (utterance level, per
   GraphRAG-Bench eval), faithfulness/groundedness/coherence of answers,
   exact-match accuracy, latency + tokens per query.
+- **Wiring 2026-10-09:** flat-baseline arm has an industry leg (Letta
+  filesystem 74.0% LoCoMo on gpt-4o-mini, `letta2025filesystem`) alongside
+  the B8 academic negative — the skepticism prior is now two-sourced.
+  Report all arms at model×harness configuration level (Harness-Bench
+  rule, `yao2026harnessbench`); pin inference config (stateful KV-cache
+  serving halves wall time per `norgren2026stateful` — a confound if it
+  drifts between arms).
 
 ## Apparatus
 
