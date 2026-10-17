@@ -192,10 +192,14 @@ Cambrian's Zero-Hardcode Rule + ADR-0100 P3 deliberately eliminates.
   (cited as 2025 by the Cluster-Route-Escalate bibliography; item response
   theory models query difficulty and LLM ability jointly, combined with cost
   into an interpretable routing score). → **Action: confirm before citing.**
-- ✅ **Huang, Ling, Lin, Chen, Zhong, Wu & Lin, "Routing LLMs with Preference
-  Data: Causal Meta-learners"** — arXiv:2503.10657 (v2 2025-05-20; **UNCONFIRMED**).
-  Causal-inference router with data augmentation; useful as the non-preference-data
-  counterpoint. → **Arm: supervision source.**
+- ✅ **"Huang, Ling, Lin, Chen, Zhong, Wu & Lin" author set = RouterEval,
+  NOT "Routing LLMs with Preference Data: Causal Meta-learners"** —
+  arXiv:2503.10657 title-matched 2026-10-06: "RouterEval: A Comprehensive
+  Benchmark for Routing LLMs..." (200M+ records, 8,500 LLMs, model-level
+  scaling-up). The citing bibliography mismatched title to ID. Reassign as
+  a router-benchmark citation; the causal-inference router paper has NO
+  confirmed ID — do not cite it. → **Arm: supervision source (benchmark
+  side).**
 
 ## 2. Cascades, escalation and cost-optimal service
 
@@ -616,6 +620,24 @@ O(1), no-model-call* router is exactly what the best of these deploy.
 
 Verified as *existing* via citing bibliographies; IDs confirmed except where
 noted. Use as the baseline pool, not as citations in their own right.
+**Resolution log 2026-10-06** (all title-matched off arXiv records or
+publisher pages; bib keys in `bib/references.bib`): TO-Router = 2408.12320
+(`torouter2024`, no venue); C2MAB-V = 2405.16587 (`c2mabv2024`, venue
+unnamed — do not cite one); "Efficient Training-Free Online Routing" =
+2509.02718, Wu & Silwal (`wu2025trainingfree`, NeurIPS 2025 per record);
+uncertainty routing 2502.11021 (`zhang2025uncertrout`); Rerouting
+2501.01818 (`shafran2025rerouting`); Causal LLM Routing 2505.16037
+(`tsiourvas2025causalrout`); LLM Bandit 2502.02743 (`li2025llmbandit`);
+Routoo 2401.13979 (`mohammadshahi2024routoo`); Fly-swat 2308.06077
+(`sakota2023flyswat`, ACM DOI present, venue unconfirmed); ZeroRouter =
+2601.06220 + AAAI-26 OJS confirmed (`zerorouter2026`); ContextualRouter =
+EACL 2026 SRW via Anthology (`varangot2026contextual`, workshop).
+Still open after two discovery passes: "Difficulty-Aware Hybrid Routing"
+(no record found — do NOT substitute the DATS topology paper 2609.13890);
+"More is not always better?" routing-over-scaling paper (Zhang et al.;
+candidates 2605.05716 scaffolding-CCI and 2501.04070 DrICL rejected on
+authors+topic); "Causal Meta-learners" preference-data router (orphaned
+description, no ID).
 
 - ✅ **TensorOpera / TO-Router** (Stripelis et al., 2024) — tensor-operator
   routing; arXiv ID **not confirmed — verify**.
@@ -623,8 +645,11 @@ noted. Use as the baseline pool, not as citations in their own right.
   over LLM *subsets*; arXiv ID **not confirmed — verify**. Relevant to
   Cambrian's slate-size metric: the right question may be "which subset" not
   "which winner".
-- ✅ **ME-Switch** (Liu et al., 2024) — multi-label domain classifier extending
-  HybridLLM; arXiv ID **not confirmed — verify**.
+- ✅ **ME-Switch** (Liu et al., 2024) — arXiv:2406.09041 (title-matched
+  2026-10-06; record says "Tech report"). CORRECTED: salient-aware delta
+  compression + domain-classification routing for *serving* Mistral-family
+  experts (1.74× smaller, 16×7B on one A100) — NOT a HybridLLM extension;
+  the earlier description came from a garbled bibliography.
 - ✅ **"More is not always better?"** (Zhang, Lv, Liu, Sung, Liu, Luan, Shang,
   Chen & Yan, 2025) — over-scaling in routing; arXiv ID **not confirmed —
   verify**. Title suggests a negative result about router scale.
@@ -693,17 +718,29 @@ required or strongly indicated, in priority order:
   "exhausted for orchest\*/rout\* axes" — the 2026 pass missed the *2024* hybrid
   inference venue and one 2026 causal-router paper. Suggest widening the ICLR
   sweep to `hybrid inference` and `causal routing` terms.
-- **Still open (🔍):** IRT-Router; TO-Router/TensorOpera; C2MAB-V; ME-Switch;
-  "More is not always better?"; "Efficient Training-Free Online Routing";
-  "Difficulty-Aware Hybrid Routing"; ZeroRouter; ContextualRouter;
-  ST-BoN (arXiv ID); CAS-Spec (arXiv ID); Soft Self-Consistency (arXiv ID).
-  Each is named in a verified bibliography but its own record was not fetched.
-- **Adversarial check not yet done:** ICLR 2026 / ICML 2026 for the *harness-cost*
-  and *token-economics* axes specifically. §0 suggests that axis is where the
-  direct competitors to Cambrian's claims live, and the existing ICLR passes
-  (`iclr2`, `iclr3`) were scoped to orchest\*/rout\*/memory/trajectory and
-  verifier/rubric/judge. **Recommend a fourth ICLR pass scoped to
-  "token economics", "cost per task", "harness", "budget-aware".**
+- **Resolved 2026-10-06:** IRT-Router = 2506.01048 (ACL 2025 Main per
+  record); TO-Router/TensorOpera = 2408.12320; C2MAB-V =
+  2405.16587; ME-Switch = 2406.09041 (description corrected);
+  "Efficient Training-Free Online Routing" = 2509.02718 (NeurIPS 2025);
+  ZeroRouter = AAAI-26 OJS-confirmed; ContextualRouter = EACL 2026 SRW;
+  ST-BoN + CAS-Spec = NeurIPS 2025 proceedings-confirmed (no arXiv needed);
+  Soft Self-Consistency = ACL 2024 short (Anthology, no arXiv needed);
+  EESD = ACL 2024 Findings; CS-Drafting = NeurIPS 2024 (corrects 2023 year
+  in CAS-Spec bib); 2503.10657 proved to be RouterEval (title/ID mismatch
+  caught — causal-router claim orphaned).
+- **Still open (🔍, external-brief candidates):** "Difficulty-Aware Hybrid
+  Routing"; "More is not always better?" (routing); "Causal Meta-learners"
+  router. Each survived two arXiv discovery passes; needs bibliography
+  archaeology or deep-research tooling.
+- **Adversarial check DONE 2026-10-06 (token-economics / harness-cost
+  axis):** OpenReview v2 API is challenge-walled (403), so the pass ran
+  over arXiv title search instead — 8 kept, 2 rejected, Harness v2
+  confirmed consistent. Full record: `notes/token-economics-2026-10-06.md`;
+  bib keys `chen2026tokenecon`, `wu2026tokenecon`, `wani2026reasoningtax`,
+  `yao2026harnessbench`, `hu2026harnessse`, `arjmandi2026harnessmodel`,
+  `qureshi2026budgetrout`, `tang2026constraintenc`. Headline for proposal
+  01: TES is the metric family P1 belongs to; the Arjmandi negative
+  (neither harness wins) is the result P3 must survive.
 - **Method note:** `export.arxiv.org/api/query` began returning HTTP 429 for this
   IP partway through the sweep (single requests at ~24 s spacing were still
   throttled). The remaining verification was completed via `arxiv.org/abs/*`
