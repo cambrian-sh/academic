@@ -122,6 +122,14 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Lu et al., "RouterArena" (ICLR 2026 Poster) — router-eval
   fragmentation + standard dataset/metric suite; external-harness candidate
   alongside OrchestrationBench. OpenReview 10011126
+- ✅ Market-selection evidence (title-verified 2026-10-17; ADR-0100's
+  external basis): MarketBench (`fradkin2026marketbench`) — six LLMs
+  miscalibrated on success/token estimates; self-reports diverge from
+  full-information allocation; self-assessment is *the* bottleneck for
+  market-style agent coordination. Agora (`zhou2026agora`, EMNLP 2026
+  Findings — venue per arXiv Comments) — confidence-calibrated auction
+  improves or stays competitive under matched pools: the calibrated-bid
+  steelman; our zero-RPC claim is bounded to hand-set uncalibrated bids.
 - ✅ Token-normalisation cluster (all title-verified; full arm table P1–P12
   in `notes/routing-cost-2026-10-01.md` §9): Tran & Kiela single-beats-multi
   at matched thinking tokens via DPI (arXiv:2604.02460) — the confound
@@ -133,12 +141,34 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   −41% cost/task from orchestration alone (arXiv:2607.06906) — mandates a
   harness-only control; BAMAS ILP+RL provisioning, 86% cut at parity with
   framework cost table (AAAI 2026 Oral, DOI 10.1609/aaai.v40i35.40226).
+- ✅ Token-economics axis sweep 2026-10-06 (OpenReview v2 challenge-walled,
+  ran over arXiv; full note `notes/token-economics-2026-10-06.md`): Token
+  Economics survey, first of field (`chen2026tokenecon`); Trilemma agenda
+  (`wu2026tokenecon`); Reasoning Tax TES metric, TPCTC 2026
+  (`wani2026reasoningtax`) — P1's metric family; Harness-Bench 106 tasks /
+  5,194 trajectories, report at model×harness level (`yao2026harnessbench`);
+  NanoHarness component ablation, compression can hurt (`hu2026harnessse`);
+  paired-contrast NEGATIVE on harness superiority + telemetry-defect
+  disclosure as honest-limits model (`arjmandi2026harnessmodel`) — P3 must
+  survive this; knapsack budget routing + ROUGE-saturation caution
+  (`qureshi2026budgetrout`); compact-encoding NULL result supporting
+  concise policy notes (`tang2026constraintenc`). Harness Effect v2
+  (2026-10-05) numbers consistent, no bib change.
 - ✅ Router family: RouteLLM (2406.18665), RouterBench+AIQ (2403.12031),
   AutoMix (2310.12963, NeurIPS 2024), HybridLLM (2404.14618, ICLR 2024),
   RouterDC (2409.19886, NeurIPS 2024), Zooter (2311.08692), Meta-Router
   causal debias (2509.25535, ICLR 2026), Router-R1 LLM-that-routes
   (2506.09033, NeurIPS 2025), BaRP bandit feedback (2510.07429),
   ICL-Router (2510.09719), MixLLM tag-conditioned (2502.18482).
+  Baseline-pool promotions 2026-10-06 (keys in bib): IRT-Router ACL 2025
+  (`irtrouter2025`); ZeroRouter AAAI 2026 (`zerorouter2026`); ContextualRouter
+  EACL SRW (`varangot2026contextual`); training-free PORT, NeurIPS 2025 per
+  record (`wu2025trainingfree`); Routoo (`mohammadshahi2024routoo`); LLM
+  Bandit (`li2025llmbandit`); causal regret routing (`tsiourvas2025causalrout`);
+  uncertainty routing (`zhang2025uncertrout`); Rerouting attack
+  (`shafran2025rerouting`); Fly-swat meta-model (`sakota2023flyswat`);
+  RouterEval benchmark (`routereval2025`); C2MAB-V subsets (`c2mabv2024`);
+  ME-Switch serving (`meswitch2024`); TO-Router (`torouter2024`).
 - ✅ Cascades: FrugalGPT (2305.05176), EcoAssistant shrink-the-work
   (2310.03046), UCCI calibrate-first (2605.18796, −31% at CI),
   Cluster-Route-Escalate TPOT budgets (2606.27457), CASTER (2601.19793),
@@ -148,18 +178,19 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Test-time compute: self-consistency origin (2203.11171, ICLR 2023),
   Snell compute-optimality (2408.03314), s1 budget forcing (2501.19393),
   Best-of-N theory + reward hacking (2503.21878, ICML 2025), PRM/ORM
-  origin (2305.20050), repeated-sampling baseline (2407.21787), "When LLMs
-  Agree" vs confidence-gating (2607.08065), CarBoN calibration (2510.15674).
+  origin (`lightman2023verify`), repeated-sampling baseline
+  (`brown2024monkeys`), "When LLMs Agree" vs confidence-gating (2607.08065),
+  CarBoN calibration (`tang2025carbon`).
 - ✅ Protocol/token footprint: ProMCP usage-vs-protocol split, synthesis
-  >85% latency (ACL 2026 Findings); Sadani Tools-Tax −95% (2604.21816,
+  >85% latency (ACL 2026 Findings); Sadani Tools-Tax −95% (`sadani2026toolstax`,
   simulated — projections not measurements); scalable MCP-gateway 98%
   Top-15 @3000 tools (2607.15593) — retrieval-filtered slate arm;
-  descriptor-quality confound study (2602.14878); Reasoning Tax marginal
-  efficiency (2608.26235); OckBench per-token-price inversion (2511.05722).
+  descriptor-quality confound study (`hasan2026smelly`); Reasoning Tax marginal
+  efficiency (2608.26235); OckBench per-token-price inversion (`du2025ockbench`).
 - ✅ Cost-spend accounting: 3500× agentic-vs-reasoning tokens, 30×
   within-task spread (2604.22750) — replicate measurements, never single
   runs; cost-per-success framing, tokens as trajectory measurements
-  (2608.01347); token shadow-pricing incl. tool latency (2605.09104,
+  (`weinberger2026waste`); token shadow-pricing incl. tool latency (2605.09104,
   framing only).
 - ✅ Plan-then-execute as trust boundary (2026) — all WebArena tasks fit,
   80% need no runtime LLM; untrusted content sets values/branches but
@@ -189,8 +220,8 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   taxonomy needed. arXiv:2501.10132
 - ✅ FuncBenchGen (ICLR 2026) — hidden function-dependency DAG as task
   primitive; closest analogue to dag-plans; GPT-5 15% at 20 calls.
-  arXiv:2509.26553 (record verified in notes file; event ID not yet
-  confirmed — add OpenReview ID before submission).
+  arXiv:2509.26553 (venue confirmed via record Comments v2; OpenReview
+  forum ID not yet confirmed — add before submission).
 - ✅ IFEval-FC — schema-prose adherence <80% even frontier models;
   "parsed the call" vs "honoured the contract" (ADR-0097).
   arXiv:2509.18420
@@ -237,7 +268,7 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Consolidation lineage: Voyager skill library (2305.16291); ExpeL
   transferable insights, no weight updates (2308.10144, AAAI-24);
   AutoGuide conditional guidelines (2403.08978); AutoManual rule Builder
-  (2405.16247, NeurIPS 2024); ChemAgent refine-on-read (2501.06590);
+  (2405.16247, NeurIPS 2024); ChemAgent refine-on-read (`tang2025chemagent`);
   AFTER skill-transfer benchmark, 382 tasks, cross-model 73.1%
   (2606.23127) — topic 10's instrument; Skill-as-Pseudocode deterministic
   four-check gate (2605.27955, EMNLP Findings 2026); Gödel Agent
@@ -262,7 +293,7 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ World models: AriGraph episodic+semantic graph (2407.04363);
   DiLu rules+reflection (2309.16292, ICLR 2024); COUNTERMEM verified
   counterfactuals as Resolution home (2609.31874); Ghost in Minecraft
-  lineage (2305.17144); Soar decay ancestor via TOIS survey.
+  lineage (`zhu2023ghost`); Soar decay ancestor via TOIS survey.
 - ✅ Graph-signal CONTESTED: Selective Forgetting (2608.28978) — graph
   loses to flat baseline on LongMemEval at matched budget (Δ −0.050,
   CI [−0.085, −0.016]); mechanism: entity decomposition discards surface
@@ -284,6 +315,30 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   arXiv:2504.19413
 - ✅ Letta, "Memory Blocks" (2025-05-14) — explicit context management
   blocks. https://www.letta.com/blog/memory-blocks/
+- ✅ Letta research program, full sweep 2026-10-05 (2 papers + 16 tech
+  reports, all archived `data/external/letta/` with SHA256SUMS; reports
+  cite as company blog, never as papers — see
+  `notes/letta-2026-10-05.md`). Papers: MemGPT virtual context
+  management (2310.08560, Packer et al.); Sleep-time Compute offline
+  pre-computation, ~5× test-time cut (2504.13171, Lin et al.). Load-bearing
+  for Cambrian: (a) B05 filesystem 74.0% LoCoMo on gpt-4o-mini vs Mem0
+  68.5% graph — industry leg for graph-signal skepticism next to B8;
+  (b) B09 skill learning +36.8% rel TB2.0 — topic-10 baseline to beat;
+  B08 use-vs-selection split (+14.1%/−6.5%) maps onto arms; (c) B10
+  (θ,C) token-space formalization — topic-10 theory anchor; B14
+  memory-native RL outer-loop framing for ADR-0094/0095; (d) B11
+  git-versioned memory ≈ versioned Resolutions; worktree merges ≈
+  conflict-tolerant memory; (e) methodology borrowings: B07 fictional
+  entities + SQL ground truth + cost tracking, B06 recovery-state arms
+  (−57% rel, full-history-worst), B15 trajectory normalization (~5×),
+  B03 extraneous-op penalty; (f) B16 usage-vs-generation split +
+  messy/clean profiles inform policy-asks A2+; B13 adversarial-audit
+  pattern warns single-turn probes under-test robustness. Novelty gaps
+  Letta leaves open: no policy/authorization story (policy-asks intact),
+  total-cost never token-normalized (proposal-01 intact), no
+  placebo discipline (sham-policy unique). Evidence rule from B05's Mem0
+  dispute: vendor numbers without a runnable backfill path are not
+  baselines — applies symmetrically to us.
 - ✅ Anthropic, "Contextual Retrieval" (2024-09-19) — chunk context cuts
   top-20 failure 35→67% with BM25+rerank; $1.02/M tokens; negatives
   reported (summaries ≈ no gain); <200k tokens just use the prompt.
@@ -414,10 +469,13 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   situates the typed agent-plane contract. arXiv:2505.02279
   (cross-seed convergence)
 - ✅ Zhan et al., adaptive attacks break indirect-injection defenses (NAACL
-  2025) — empirical argument against Awareness-layer-only detection.
-  arXiv:2503.00061
-- ✅ Zou et al., PoisonedRAG (USENIX Sec 2024) — write-side poisoning
-  baseline the substrate must be measured against. arXiv:2402.07867
+  2025 Findings) — empirical argument against Awareness-layer-only detection.
+  arXiv:2503.00061 (key `zhan2025adaptive`; venue corrected 2026-10-11)
+- ✅ Zou et al., PoisonedRAG (USENIX Security 2025) — write-side
+  poisoning baseline the substrate must be measured against: 90% ASR with
+  5 poisoned texts per target in a DB of millions; tested defenses
+  insufficient. arXiv:2402.07867 (key `zou2024poisonedrag`; venue
+  corrected 2026-10-06 — earlier files said 2024, wrong).
 - ✅ Salami/MemCollusion (2608.01637) — individually-benign, jointly
   harmful memories; falsifies per-write validation as sufficient; threat
   unit is the coalition. Bounds ADR-0043/0105/0118 claims.
@@ -431,11 +489,13 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
   under review) — recency+provenance insufficient; uncertainty-triggered
   clarification supports ErrCannotExpress abstain path.
 - ✅ CSUR agent security/privacy survey with cases (2407.19354, CSUR 2025).
-- ✅ MCPTox — first large tool-poisoning measurement on real MCP servers
-  (45 servers/353 tools/20 agents; mean ASR 36.5%, o1-mini 72.8%,
-  refusals <3%; reasoning +27.8pp ASR; IPI payloads ≈0%). The primary
-  ADR-0043 lacked; tool-poisoning is NOT an IPI variant.
-  arXiv:2508.14925 (venue unconfirmed — do not write AAAI 2026)
+- ✅ MCPTox (AAAI 2026, vol 40(42):35811–35819, DOI
+  10.1609/aaai.v40i42.40895 — venue CONFIRMED 2026-10-06 via OJS;
+  official title drops "Attack") — first large tool-poisoning measurement
+  on real MCP servers (45 servers/353 tools/20 agents; mean ASR 36.5%,
+  o1-mini 72.8%, refusals <3%; reasoning +27.8pp ASR; IPI payloads ≈0%).
+  The primary ADR-0043 lacked; tool-poisoning is NOT an IPI variant.
+  arXiv:2508.14925
 - ✅ "When MCP Servers Attack" — only evaluation of scanners: mcp-scan
   caught 4 poisoned servers; LLM-judge scanners bypassed by subtle text.
   Measured case against connect-time scanning. arXiv:2509.24272
@@ -488,6 +548,18 @@ protocol: arXiv-API title-match, Crossref title-match, or double-source
 - ✅ Praetorian indirect-injection vs supervisor agents — supervisor blind
   spot when only user messages are inspected; justifies Cambrian's
   kernel-side enforcement (never in the Awareness layer alone).
+- ✅ Anthropic, "How we contain Claude across products" (2026-05-25) —
+  environment-layer-first containment; 93% prompt-approval rate (approval
+  fatigue kills HITL oversight); pre-trust-dialog code execution;
+  user-as-injection-vector phish 24/25 (model layer cannot help);
+  allowlist-as-capability-grant; custom components fail, hypervisors hold.
+  Independent convergence with "kernel disposes". Archived
+  `data/external/frontier/`, delta note 2026-10-10.
+- ✅ Google DeepMind, Private AI Compute sealed server-side memory
+  (2026-09-23) — device-held keys, enclave decryption, per-user DBs,
+  public software record + independent audit. Industry's persistent-memory
+  privacy answer; contrast: they solve *who can see*, we solve *what may
+  be retrieved under which predicate*. Archived `data/external/frontier/`.
 - ✅ He & Yu, "When AI Agents Commit: Cognitive Serializability Across Data,
   Evidence, Policy, and Authority" (22pp) — agents derive mutations from
   reads, evidence, policy, beliefs, delegated authority. Read first for the

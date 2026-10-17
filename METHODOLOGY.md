@@ -43,6 +43,16 @@ How each Cambrian evaluation mechanism maps to a defensible academic method.
   2026: uncapped beats 1× by 6pp; gaps <3pp deserve skepticism). Add to
   every freeze row.
 
+- Borrowed evaluation patterns (literature-anchored, not yet implemented):
+  penalize extraneous tool calls in scoring (Letta Leaderboard: archival-
+  strong models overuse ops); recovery-state arms, fresh-vs-dirty with
+  full-history-worst expectation (Recovery-Bench −57% rel); trajectory
+  normalization precedent for row traces (Letta `trajectory`, ~5× token
+  cut); fictional-entity + SQL-ground-truth contamination discipline for
+  future suites (Context-Bench); adversarial-auditor + judge harness with
+  multi-turn reversion warning — single-turn probes under-test robustness
+  (Letta red-team). See `notes/letta-2026-10-05.md`.
+
 - Routing metrics keep auction-era names (`bid_dispersion`,
   `candidates_per_auction`) — explain, don't rename silently.
 - Some suites predate fixes (e.g. pre-2026-08-08 `scout_usefulness` keys are
