@@ -1,5 +1,8 @@
 % Canonical references — entries marked UNVERIFIED need identifier confirmation
 % before submission. See LITERATURE_REVIEW.md status column.
+% Convention (2026-10-11): bare arXiv IDs in review/notes = verified-in-notes
+% (see the cited note file), intentionally not yet promoted; bib keys =
+% submission-grade citations for the drafts. Do not "fix" bare IDs by guessing.
 
 @misc{fan2026harness,
   title={An Empirical Study of Harness Design for Coding Agents},
@@ -146,6 +149,22 @@
   author={Lee, Donghyun and Tiwari, Mo},
   year={2024}, eprint={2410.07283}, archivePrefix={arXiv},
   note={Cross-seed convergence (MDPI survey + MCP-threat survey).}
+}
+
+@inproceedings{zou2024poisonedrag,
+  title={Poisoned{RAG}: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models},
+  author={Zou, Wei and Geng, Runpeng and Wang, Binghui and Jia, Jinyuan},
+  booktitle={USENIX Security Symposium}, year={2025},
+  eprint={2402.07867}, archivePrefix={arXiv},
+  note={90\% ASR with 5 poisoned texts per target in a DB of millions; tested defenses insufficient. Venue corrected 2026-10-06: USENIX Security 2025 per arXiv Comments (earlier files said 2024 — wrong).}
+}
+
+@inproceedings{zhan2025adaptive,
+  title={Adaptive Attacks Break Defenses Against Indirect Prompt Injection Attacks on {LLM} Agents},
+  author={Zhan, Qiusi and Fang, Richard and Panchal, Henil Shalin and Kang, Daniel},
+  booktitle={NAACL Findings}, year={2025},
+  eprint={2503.00061}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (NAACL 2025 Findings) — corrects bare ``NAACL 2025'' in review. 8 defenses bypassed, ASR >50\%. Title-match verified 2026-10-11.}
 }
 
 @misc{dong2025meminject,
@@ -528,7 +547,162 @@
 @misc{harness2026,
   title={The Harness Effect: How Orchestration Design Sets the Token Economics of Enterprise Agentic {AI}},
   year={2026}, eprint={2607.06906}, archivePrefix={arXiv},
-  note={-41\% cost/task orchestration-only. Mandates harness control. No venue claimed.}
+  note={-41\% cost/task orchestration-only. Mandates harness control. No venue claimed. v2 2026-10-05 numbers consistent.}
+}
+
+@misc{hu2026harnessse,
+  title={Beyond the Model: Demystifying Harness Effects in Software Engineering Agents},
+  author={Hu, Haichuan and coauthors},
+  year={2026}, eprint={2609.32459}, archivePrefix={arXiv},
+  note={NanoHarness component ablation; compression/general subagents can hurt; gains diminish with capability on repair tasks. No venue claimed.}
+}
+
+@misc{arjmandi2026harnessmodel,
+  title={Harness or Model? Isolating the Harness Effect in Agentic Coding with a Contamination-Controlled Private Suite},
+  author={Arjmandi, Mohsen},
+  year={2026}, eprint={2609.11987}, archivePrefix={arXiv},
+  note={Paired same-model contrasts; NEITHER harness wins on average; neutral harness 1.2-1.6x per solved task; telemetry-defect revision disclosed. Negative result P3 must survive. No venue claimed.}
+}
+
+@misc{wani2026reasoningtax,
+  title={The Reasoning Tax: Token Economics of {LLM} Reasoning Across Task Types and Deployment Contexts},
+  author={Wani, Sachin Gopal and Dholakia, Ajay and Ellison, David},
+  year={2026}, eprint={2608.26235}, archivePrefix={arXiv},
+  note={Accepted TPCTC 2026 (Springer). TES metric: accuracy gain over token multiplier; 151 runs; structure beats difficulty. P1 metric precedent.}
+}
+
+@misc{yao2026harnessbench,
+  title={{Harness-Bench}: Measuring Harness Effects across Models in Realistic Agent Workflows},
+  author={Yao, Yilun and coauthors},
+  year={2026}, eprint={2605.27922}, archivePrefix={arXiv},
+  note={106 tasks, 5,194 trajectories; report capability at modelxharness level; execution-alignment failures. No venue claimed.}
+}
+
+@misc{wu2026tokenecon,
+  title={Computational Challenges in Token Economics: Bridging Economic Theory and {AI} System Design},
+  author={Wu, Ou and Deng, Yingjun},
+  year={2026}, eprint={2605.17410}, archivePrefix={arXiv},
+  note={Token Economics Trilemma (granularity/real-time/optimality); agenda paper. No venue claimed.}
+}
+
+@misc{chen2026tokenecon,
+  title={Token Economics for {LLM} Agents: A Dual-View Study from Computing and Economics},
+  author={Chen, Yuxi and coauthors},
+  year={2026}, eprint={2605.09104}, archivePrefix={arXiv},
+  note={First Token Economics survey; micro/meso/macro/security taxonomy. The survey proposal 01 was missing. No venue claimed.}
+}
+
+@misc{qureshi2026budgetrout,
+  title={Budget-Aware Routing for Long Clinical Text},
+  author={Qureshi, Khizar and Martin, Geoffrey and Peng, Yifan},
+  year={2026}, eprint={2605.00336}, archivePrefix={arXiv},
+  note={Knapsack subset selection under token budget; selector beats unitization; ROUGE saturates, BERTScore discriminates. No venue claimed.}
+}
+
+@misc{tang2026constraintenc,
+  title={Compact Constraint Encoding for {LLM} Code Generation: An Empirical Study of Token Economics and Constraint Compliance},
+  author={Tang, Hanzhang},
+  year={2026}, eprint={2604.07192}, archivePrefix={arXiv},
+  note={NULL result: -25-30\% tokens, no compliance change; supports concise policy-note encoding. No venue claimed.}
+}
+
+@inproceedings{ding2025bestroute,
+  title={{BEST-Route}: Adaptive {LLM} Routing with Test-Time Optimal Compute},
+  author={Ding, Dujian and Mallick, Ankur and Zhang, Shaokun and Wang, Chi and Madrigal, Daniel and Garcia, Mirian Del Carmen Hipolito and Xia, Menglin and Lakshmanan, Laks V.~S. and Wu, Qingyun and R{\"u}hle, Victor},
+  booktitle={ICML}, year={2025},
+  eprint={2506.22716}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (ICML 2025 main). Model + sample-count routing; -60\% cost at <1\% drop. Title-match verified 2026-10-11.}
+}
+
+@misc{fradkin2026marketbench,
+  title={{MarketBench}: Evaluating {AI} Agents as Market Participants},
+  author={Fradkin, Andrey and Krishnan, Rohit},
+  year={2026}, month={apr}, eprint={2604.23897}, archivePrefix={arXiv},
+  note={93-task SWE-bench Lite subset; six LLMs miscalibrated on success probability and token usage; auctions built from self-reports diverge from full-information allocation; self-assessment is the key bottleneck for market-style coordination. ADR-0100's external basis. Title-match verified 2026-10-17 (abstract-level claims only). No venue claimed.}
+}
+
+@misc{zhou2026agora,
+  title={{Agora}: Enhancing {LLM} Agent Reasoning Via Auction-Based Task Allocation},
+  author={Zhou, Kaiji and Leonardis, Ale{\v{s}} and Feng, Yue},
+  year={2026}, month={jul}, eprint={2607.09600}, archivePrefix={arXiv},
+  note={Confidence-calibrated auction for expert-model/tool allocation; improves or remains competitive with single-model, routing, and cascade baselines under matched candidate pools --- the calibrated-auction steelman bounding zero-RPC claims to hand-set uncalibrated bids. Venue per arXiv Comments: EMNLP 2026 Findings. Title-match verified 2026-10-17.}
+}
+
+@misc{jitkrittum2025uniroute,
+  title={Universal Model Routing for Efficient {LLM} Inference},
+  author={Jitkrittum, Wittawat and Narasimhan, Harikrishna and Rawat, Ankit Singh and Juneja, Jeevesh and Wang, Congchao and Wang, Zifeng and Go, Alec and Lee, Chen-Yu and Shenoy, Pradeep and Panigrahy, Rina and Menon, Aditya Krishna and Kumar, Sanjiv},
+  year={2025}, eprint={2502.08773}, archivePrefix={arXiv},
+  note={LLM-as-feature-vector dynamic routing; 30+ unseen LLMs. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{kotte2026ucci,
+  title={{UCCI}: Calibrated Uncertainty for Cost-Optimal {LLM} Cascade Routing},
+  author={Kotte, Varun},
+  year={2026}, eprint={2605.18796}, archivePrefix={arXiv},
+  note={Isotonic-calibrated escalation; -31\% cost CI [27,35] on measured H100 latency (not simulated prices). No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{du2025ockbench,
+  title={{OckBench}: Measuring the Efficiency of {LLM} Reasoning},
+  author={Du, Zheng and Kang, Hao and Han, Song and Krishna, Tushar and Zhu, Ligeng},
+  year={2025}, eprint={2511.05722}, archivePrefix={arXiv},
+  note={Accuracy+efficiency joint benchmark; up to 5x token-length variance at similar accuracy. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{weinberger2026waste,
+  title={Prompt-Induced Waste in Coding Agents: Reasoning, Effort, Harness Design, and End-to-End Cost},
+  author={Weinberger, Sarel and Hozez, Amir},
+  year={2026}, eprint={2608.01347}, archivePrefix={arXiv},
+  note={Cost-per-success framing; prompt/effort/harness are interacting factors, not independent controls. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{brown2024monkeys,
+  title={Large Language Monkeys: Scaling Inference Compute with Repeated Sampling},
+  author={Brown, Bradley and Juravsky, Jordan and Ehrlich, Ryan and Clark, Ronald and Le, Quoc V. and R{\'e}, Christopher and Mirhoseini, Azalia},
+  year={2024}, eprint={2407.21787}, archivePrefix={arXiv},
+  note={Coverage log-linear over 4 orders of magnitude; SWE-bench Lite 15.9\% to 56\%. Repeated-sampling baseline. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{sadani2026toolstax,
+  title={Tool Attention Is All You Need: Dynamic Tool Gating and Lazy Schema Loading for Eliminating the {MCP}/Tools Tax in Scalable Agentic Workflows},
+  author={Sadani, Anuj and Kumar, Deepak},
+  year={2026}, eprint={2604.21816}, archivePrefix={arXiv},
+  note={-95\% per-turn tool tokens in simulation; end-to-end figures explicitly marked projections, NOT measurements — keep the simulated caveat. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{tang2025carbon,
+  title={{CarBoN}: Calibrated Best-of-N Sampling Improves Test-time Reasoning},
+  author={Tang, Yung-Chen and Chen, Pin-Yu and Cavallaro, Andrea},
+  year={2025}, eprint={2510.15674}, archivePrefix={arXiv},
+  note={Input-specific temperature+shift calibration; 4x fewer rollouts at matched accuracy. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{hasan2026smelly,
+  title={Model Context Protocol ({MCP}) Tool Descriptions Are Smelly! Towards Improving {AI} Agent Efficiency with Augmented {MCP} Tool Descriptions},
+  author={Hasan, Mohammed Mehedi and Li, Hao and Rajbahadur, Gopi Krishnan and Adams, Bram and Hassan, Ahmed E.},
+  year={2026}, eprint={2602.14878}, archivePrefix={arXiv},
+  note={97.1\% of 856 tool descriptions smell; augmentation +5.85pp success but +67\% steps and 16.67\% regressions. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{tang2025chemagent,
+  title={{ChemAgent}: Self-updating Library in Large Language Models Improves Chemical Reasoning},
+  author={Tang, Xiangru and Hu, Tianyu and Ye, Muyang and Shao, Yanjun and Yin, Xunjian and Ouyang, Siru and Zhou, Wangchunshu and Pan, Lu and Zhang, Zhuosheng and Zhao, Yilun and Cohan, Arman and Gerstein, Mark},
+  year={2025}, eprint={2501.06590}, archivePrefix={arXiv},
+  note={Self-updating skill library + three memory types; +46\% (GPT-4). Consolidation lineage. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{zhu2023ghost,
+  title={Ghost in the Minecraft: Generally Capable Agents for Open-World Environments via Large Language Models with Text-based Knowledge and Memory},
+  author={Zhu, Xizhou and Chen, Yuntao and Tian, Hao and Tao, Chenxin and Su, Weijie and Yang, Chenyu and Huang, Gao and Li, Bin and Lu, Lewei and Wang, Xiaogang and Qiao, Yu and Zhang, Zhaoxiang and Dai, Jifeng},
+  year={2023}, eprint={2305.17144}, archivePrefix={arXiv},
+  note={Text-memory open-world agent; +47.5\% ObtainDiamond, full tech tree. World-model lineage. No venue claimed. Title-match verified 2026-10-11.}
+}
+
+@misc{lightman2023verify,
+  title={Let's Verify Step by Step},
+  author={Lightman, Hunter and Kosaraju, Vineet and Burda, Yura and Edwards, Harri and Baker, Bowen and Lee, Teddy and Leike, Jan and Schulman, John and Sutskever, Ilya and Cobbe, Karl},
+  year={2023}, eprint={2305.20050}, archivePrefix={arXiv},
+  note={Process beats outcome supervision; 78\% MATH subset; PRM800K (800k labels). No venue on record (OpenAI report). Title-match verified 2026-10-11.}
 }
 
 @inproceedings{bamas2026,
@@ -733,9 +907,10 @@
 
 @inproceedings{funcbenchgen2026,
   title={Towards Reliable Benchmarking: A Contamination Free, Controllable Evaluation Framework},
+  author={Maekawa, Seiji and Hassell, Jackson and Pezeshkpour, Pouya and Mitchell, Tom and Hruschka, Estevam},
   booktitle={ICLR}, year={2026},
   eprint={2509.26553}, archivePrefix={arXiv},
-  note={Hidden function-dependency DAG primitive.}
+  note={Hidden function-dependency DAG primitive. Venue confirmed via arXiv Comments (v2 2026-02-06). OpenReview forum ID still open — add before submission.}
 }
 
 @misc{wang2025ifevalfc,
@@ -756,10 +931,176 @@
   note={Five-dimension tool-use split.}
 }
 
-@misc{mcptox2025,
-  title={{MCPTox}: A Benchmark for Tool Poisoning Attack on Real-World {MCP} Servers},
-  year={2025}, eprint={2508.14925}, archivePrefix={arXiv},
-  note={Venue UNCONFIRMED — do not write AAAI 2026. Mean ASR 36.5\%; refusals <3\%.}
+@inproceedings{zerorouter2026,
+  title={Breaking Model Lock-in: Cost-Efficient Zero-Shot {LLM} Routing via a Universal Latent Space},
+  author={Yan, Cheng and Zhang, Wuyang and Ning, Zhiyuan and Xu, Fan and Tao, Ziyang and Zhang, Lu and Yin, Bing and Zhang, Yanyong},
+  booktitle={AAAI Conference on Artificial Intelligence}, volume={40}, number={43},
+  year={2026}, pages={36483--36490}, doi={10.1609/aaai.v40i43.40970},
+  eprint={2601.06220}, archivePrefix={arXiv},
+  note={Venue CONFIRMED 2026-10-06 via OJS. Query-difficulty latent decoupled from model profiling; zero-shot model onboarding.}
+}
+
+@inproceedings{irtrouter2025,
+  title={{IRT-Router}: Effective and Interpretable Multi-{LLM} Routing via Item Response Theory},
+  author={Song, Wei and Huang, Zhenya and Cheng, Cheng and Gao, Weibo and Xu, Bihan and Zhao, Guanhao and Wang, Fei and Wu, Runze},
+  booktitle={ACL}, year={2025},
+  eprint={2506.01048}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (ACL 2025 Main). IRT models query difficulty x LLM ability; interpretable score.}
+}
+
+@misc{torouter2024,
+  title={{TensorOpera} Router: A Multi-Model Router for Efficient {LLM} Inference},
+  author={Stripelis, Dimitris and Hu, Zijian and Zhang, Jipeng and Xu, Zhaozhuo and Shah, Alay Dilipbhai and Jin, Han and Yao, Yuhang and Avestimehr, Salman and He, Chaoyang},
+  year={2024}, eprint={2408.12320}, archivePrefix={arXiv},
+  note={No venue claimed. ID discovered 2026-10-06 via arXiv title search.}
+}
+
+@misc{meswitch2024,
+  title={{ME-Switch}: A Memory-Efficient Expert Switching Framework for Large Language Models},
+  author={Liu, Jing and Gong, Ruihao and Zhang, Mingyang and He, Yefei and Cai, Jianfei and Zhuang, Bohan},
+  year={2024}, eprint={2406.09041}, archivePrefix={arXiv},
+  note={Tech report per record. Salient-aware delta compression + domain-classification routing for serving Mistral-family experts (1.74x smaller; 16x7B on one A100). CORRECTED 2026-10-06: not a HybridLLM extension — the sweep note's description came from a garbled bibliography.}
+}
+
+@misc{wu2025trainingfree,
+  title={Efficient Training-Free Online Routing for High-Volume Multi-{LLM} Serving},
+  author={Wu, Fangzhou and Silwal, Sandeep},
+  year={2025}, eprint={2509.02718}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (NeurIPS 2025). ANN-based online routing; 1-o(1) competitive ratio; 3.55x performance, 4.25x throughput. Closest training-free competitor — high priority baseline.}
+}
+
+@misc{c2mabv2024,
+  title={Cost-Effective Online Multi-{LLM} Selection with Versatile Reward Models},
+  author={Dai, Xiangxiang and Li, Jin and Liu, Xutong and Yu, Anqi and Lui, John C.~S.},
+  year={2024}, eprint={2405.16587}, archivePrefix={arXiv},
+  note={Record says ``conference'' with venue unnamed — do not cite a venue. Combinatorial bandit over LLM subsets; slate-size angle. ID discovered 2026-10-06.}
+}
+
+@misc{routereval2025,
+  title={{RouterEval}: A Comprehensive Benchmark for Routing {LLMs} to Explore Model-level Scaling Up in {LLMs}},
+  author={Huang, Zhongzhan and Ling, Guoming and Lin, Yupei and Chen, Yandong and Zhong, Shanshan and Wu, Hefeng and Lin, Liang},
+  year={2025}, eprint={2503.10657}, archivePrefix={arXiv},
+  note={Preprint per record. 200M+ performance records over 8,500 LLMs; model-level scaling-up phenomenon. CORRECTED 2026-10-06: this ID is RouterEval, NOT ``Routing LLMs with Preference Data: Causal Meta-learners'' — the citing bibliography mismatched title to ID. The causal-router paper has no confirmed ID; do not cite it.}
+}
+
+@misc{refining2026,
+  title={Refining Over Resampling: Test-Time Self-Correction for {LLM} Reasoning},
+  author={Bilal, Ahsan and Mohsin, Muhammad Ahmed and Umer, Muhammad and Trigg, Lena and Subhan, Ali and Ali, Muhammad and Hougen, Dean F.},
+  year={2026}, eprint={2608.05643}, archivePrefix={arXiv},
+  note={Submitted to EMNLP 2026 per record (not a venue). Breadth-depth refinement beats wider sampling; diversity-side account of budget forcing.}
+}
+
+@misc{zhang2025uncertrout,
+  title={Leveraging Uncertainty Estimation for Efficient {LLM} Routing},
+  author={Zhang, Tuo and Mehradfar, Asal and Dimitriadis, Dimitrios and Avestimehr, Salman},
+  year={2025}, eprint={2502.11021}, archivePrefix={arXiv},
+  note={No venue claimed. Confidence-driven router; LLM-as-judge response-quality assessment. Title-match verified 2026-10-06.}
+}
+
+@misc{shafran2025rerouting,
+  title={Rerouting {LLM} Routers},
+  author={Shafran, Avital and Schuster, Roei and Ristenpart, Thomas and Shmatikov, Vitaly},
+  year={2025}, eprint={2501.01818}, archivePrefix={arXiv},
+  note={No venue claimed. Confounder gadgets force escalation to strong models; perplexity filtering fails. Security angle: learned router is an attack surface. Title-match verified 2026-10-06.}
+}
+
+@misc{tsiourvas2025causalrout,
+  title={Causal {LLM} Routing: End-to-End Regret Minimization from Observational Data},
+  author={Tsiourvas, Asterios and Sun, Wei and Perakis, Georgia},
+  year={2025}, eprint={2505.16037}, archivePrefix={arXiv},
+  note={No venue claimed. Observational-data regret minimization; interval-conditioned cost preferences. Title-match verified 2026-10-06.}
+}
+
+@misc{li2025llmbandit,
+  title={{LLM} Bandit: Cost-Efficient {LLM} Generation via Preference-Conditioned Dynamic Routing},
+  author={Li, Yang},
+  year={2025}, eprint={2502.02743}, archivePrefix={arXiv},
+  note={No venue claimed. Bandit with inference-time preference dial; generalizes to unseen LLMs. Title-match verified 2026-10-06.}
+}
+
+@misc{mohammadshahi2024routoo,
+  title={{Routoo}: Learning to Route to Large Language Models Effectively},
+  author={Mohammadshahi, Alireza and Shaikh, Arshad Rafiq and Yazdani, Majid},
+  year={2024}, eprint={2401.13979}, archivePrefix={arXiv},
+  note={No venue claimed. Contrastive learned-router baseline; matches Mixtral 8x7b at -1/3 cost. Title-match verified 2026-10-06.}
+}
+
+@misc{sakota2023flyswat,
+  title={Fly-Swat or Cannon? Cost-Effective Language Model Choice via Meta-Modeling},
+  author={Sakota, Marija and Peyrard, Maxime and West, Robert},
+  year={2023}, eprint={2308.06077}, archivePrefix={arXiv},
+  note={ACM DOI 10.1145/3616855.3635825 present on record; proceedings venue not confirmed from record — do not assert one. Matches largest-LM performance at -63\% cost. Title-match verified 2026-10-06.}
+}
+
+@misc{balachandran2025itscaling,
+  title={Inference-Time Scaling for Complex Tasks: Where We Stand and What Lies Ahead},
+  author={Balachandran, Vidhisha and coauthors},
+  year={2025}, eprint={2504.00294}, archivePrefix={arXiv},
+  note={No venue claimed. 9 models x 8 hard tasks; scaling benefits diminish with complexity; perfect-verifier bounds. Title-match verified 2026-10-06.}
+}
+
+@inproceedings{liu2024eesd,
+  title={Speculative Decoding via Early-exiting for Faster {LLM} Inference with Thompson Sampling Control Mechanism},
+  author={Liu, Jiahao and Wang, Qifan and Wang, Jingang and Cai, Xunliang},
+  booktitle={ACL Findings}, year={2024},
+  eprint={2406.03853}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (ACL 2024 Findings). LLM segment as drafter + Thompson sampling. Title-match verified 2026-10-06.}
+}
+
+@inproceedings{chen2023csdrafting,
+  title={Cascade Speculative Drafting for Even Faster {LLM} Inference},
+  author={Chen, Ziyi and Yang, Xiaocong and Lin, Jiacheng and Sun, Chenkai and Chang, Kevin Chen-Chuan and Huang, Jie},
+  booktitle={NeurIPS}, year={2024},
+  eprint={2312.11462}, archivePrefix={arXiv},
+  note={Venue per arXiv Comments (NeurIPS 2024) — corrects the ``NeurIPS 2023'' year in CAS-Spec's bibliography. Vertical + horizontal cascades. Title-match verified 2026-10-06.}
+}
+
+@misc{norgren2026stateful,
+  title={Stateful Inference for Low-Latency Multi-Agent Tool Calling},
+  author={Norgren, Victor},
+  year={2026}, eprint={2605.26289}, archivePrefix={arXiv},
+  note={No venue claimed. Persistent KV cache turns O(n) per-turn cost into O(delta); 2.1x per-turn, halves wall time. Title-match verified 2026-10-06.}
+}
+
+@inproceedings{varangot2026contextual,
+  title={Generalising {LLM} Routing using Past Performance Retrieval: A Few-Shot Router is Sufficient},
+  author={Varangot-Reille, Clovis and Bouvard, Christophe and Gourru, Antoine},
+  booktitle={EACL Student Research Workshop}, year={2026}, pages={304--319},
+  doi={10.18653/v1/2026.eacl-srw.22},
+  note={Venue CONFIRMED 2026-10-06 via ACL Anthology (workshop paper — cite as such). Retrieval-of-past-performance matches learned routers; k-NN suffices. Supports cheap-lookup routing thesis.}
+}
+
+@inproceedings{wang2024softsc,
+  title={Soft Self-Consistency Improves Language Models Agents},
+  author={Wang, Han and Prasad, Archiki and Stengel-Eskin, Elias and Bansal, Mohit},
+  booktitle={ACL (Short Papers)}, year={2024}, pages={287--301},
+  doi={10.18653/v1/2024.acl-short.28},
+  note={Venue CONFIRMED 2026-10-06 via ACL Anthology. Continuous likelihood scoring; half the samples; +1.3\% bash / +6.6\% WebShop / +4.7\% ALFWorld. (Title grammar sic.)}
+}
+
+@inproceedings{wang2025stbon,
+  title={Sampling-Efficient Test-Time Scaling: Self-Estimating the Best-of-N Sampling in Early Decoding},
+  author={Wang, Yiming and Zhang, Pei and Huang, Siyuan and Yang, Baosong and Zhang, Zhuosheng and Huang, Fei and Wang, Rui},
+  booktitle={NeurIPS}, year={2025},
+  doi={10.52202/085713-5415},
+  note={Venue CONFIRMED 2026-10-06 via NeurIPS proceedings page. Early-state consistency truncation; -80\% GPU mem, -50\% latency, 70-80\% compute saved. No arXiv ID needed.}
+}
+
+@inproceedings{ning2025casspec,
+  title={{CAS-Spec}: Cascade Adaptive Self-Speculative Decoding for On-the-Fly Lossless Inference Acceleration of {LLMs}},
+  author={Ning, Zhiyuan and Shao, Jiawei and Xu, Ruge and Guo, Xinfei and Zhang, Jun and Zhang, Chi and Li, Xuelong},
+  booktitle={NeurIPS}, year={2025},
+  doi={10.52202/085713-2182},
+  note={Venue CONFIRMED 2026-10-06 via NeurIPS proceedings page. Dynamic Tree Cascade; 1.1-2.3x speedup. No arXiv ID needed.}
+}
+
+@inproceedings{mcptox2025,
+  title={{MCPTox}: A Benchmark for Tool Poisoning on Real-World {MCP} Servers},
+  author={Wang, Zhiqiang and Gao, Yichao and Wang, Yanting and Liu, Suyuan and Sun, Haifeng and Cheng, Haoran and Shi, Guanquan and Du, Haohua and Li, Xiangyang},
+  booktitle={AAAI Conference on Artificial Intelligence}, volume={40}, number={42},
+  year={2026}, pages={35811--35819}, doi={10.1609/aaai.v40i42.40895},
+  eprint={2508.14925}, archivePrefix={arXiv},
+  note={Venue CONFIRMED 2026-10-06 via OJS landing page (was: do not write AAAI 2026). Mean ASR 36.5\%; refusals <3\%. Official title drops ``Attack''.}
 }
 
 @misc{mcpattack2025,
@@ -838,6 +1179,20 @@
   author={Yan, Walden},
   year={2025}, month={jun},
   note={Cognition. Delegation must carry decision context. \url{https://cognition.ai/blog/dont-build-multi-agents}}
+}
+
+@misc{anthropic2026contain,
+  title={How we contain Claude across products},
+  author={{Anthropic}},
+  year={2026}, month={may},
+  note={Engineering practice: environment-layer-first containment; 93\% approval fatigue; allowlist-as-capability-grant. Archived data/external/frontier/. \url{https://www.anthropic.com/engineering/how-we-contain-claude}}
+}
+
+@misc{deepmind2026privatemem,
+  title={Advancing Private {AI} Compute with secure, server-side memory},
+  author={{Google DeepMind}},
+  year={2026}, month={sep},
+  note={Industry persistent-memory privacy: sealed storage, device-held keys, public software record + audit. Contrast: who-can-see vs what-may-be-retrieved. Archived data/external/frontier/. \url{https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/}}
 }
 
 @misc{segato2026noise,
@@ -1028,7 +1383,7 @@
   author={Yang, Wei},
   journal={Research Policy}, volume={55}, number={7}, year={2026},
   pages={105500}, doi={10.1016/j.respol.2026.105500},
-  note={Effect direction UNVERIFIED (abstract unretrieved). Cite existence only.}
+  note={Effect direction still UNVERIFIED 2026-10-06: closed access, no abstract in Crossref/OpenAlex/S2 deposits. Enriched: single author Wei Yang (CEIBS, Shanghai); event-study design with cumulative abnormal returns (OpenAlex keywords); cited twice, top-1\% FWCI projection (do not cite as impact). Needs institutional PDF access — external-brief item.}
 }
 
 @inproceedings{wu2024licenseuse,
@@ -1106,4 +1461,114 @@
   title={{LongMemEval}: Benchmarking Chat Assistants on Long-Term Interactive Memory},
   author={Wu, Di and coauthors},
   year={2025}, eprint={2410.10813}, archivePrefix={arXiv}
+}
+
+@misc{packer2023memgpt,
+  title={{MemGPT}: Towards {LLMs} as Operating Systems},
+  author={Packer, Charles and Wooders, Sarah and Lin, Kevin and Fang, Vivian and Patil, Shishir G. and Stoica, Ion and Gonzalez, Joseph E.},
+  year={2023}, eprint={2310.08560}, archivePrefix={arXiv},
+  note={Virtual context management; tiered-memory origin. Title verified off arXiv abs page 2026-10-05.}
+}
+
+@misc{lin2025sleeptime,
+  title={Sleep-time Compute: Beyond Inference Scaling at Test-time},
+  author={Lin, Kevin and Snell, Charlie and Wang, Yu and Packer, Charles and Wooders, Sarah and Stoica, Ion and Gonzalez, Joseph E.},
+  year={2025}, eprint={2504.13171}, archivePrefix={arXiv},
+  note={Offline context pre-computation; ~5x test-time reduction. Title verified off arXiv abs page 2026-10-05.}
+}
+
+@misc{letta2025memoryblocks,
+  title={Memory Blocks: The Key to Agentic Context Management},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). \url{https://www.letta.com/blog/memory-blocks/} Archived 2026-10-05.}
+}
+
+@misc{letta2025sleeptimeblog,
+  title={Sleep-time Compute},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). Primary/sleeper agent pair. \url{https://www.letta.com/blog/sleep-time-compute/} Archived 2026-10-05.}
+}
+
+@misc{letta2025leaderboard,
+  title={Letta Leaderboard: Benchmarking {LLMs} on Agentic Memory},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). Read/write/update x core/archival. \url{https://www.letta.com/blog/letta-leaderboard/} Archived 2026-10-05.}
+}
+
+@misc{letta2025terminalbench,
+  title={Building the \#1 Open Source Terminal-Use Agent Using Letta},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). 42.5\% Terminal-Bench. \url{https://www.letta.com/blog/terminal-bench/} Archived 2026-10-05.}
+}
+
+@misc{letta2025filesystem,
+  title={Benchmarking {AI} Agent Memory: Is a Filesystem All You Need?},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). 74.0\% LoCoMo on gpt-4o-mini with plain files; graph-signal skepticism support. \url{https://www.letta.com/blog/benchmarking-ai-agent-memory/} Archived 2026-10-05.}
+}
+
+@misc{letta2025recoverybench,
+  title={Introducing Recovery-Bench: Evaluating {LLMs}' Ability to Recover from Mistakes},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). Recovery as distinct capability; -57\% relative. \url{https://www.letta.com/blog/recovery-bench/} Archived 2026-10-05.}
+}
+
+@misc{letta2025contextbench,
+  title={Context-Bench: Benchmarking {LLMs} on Agentic Context Engineering},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). SQL-generated fictional entities; cost tracking. \url{https://www.letta.com/blog/context-bench/} Archived 2026-10-05.}
+}
+
+@misc{letta2025contextbenchskills,
+  title={Can Any Model Use Skills? Adding Skills to Context-Bench},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). +14.1\% from relevant skill; selection gap -6.5\%. \url{https://www.letta.com/blog/context-bench-skills/} Archived 2026-10-05.}
+}
+
+@misc{letta2025skilllearning,
+  title={Skill Learning: Bringing Continual Learning to {CLI} Agents},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). +36.8\% rel on Terminal-Bench 2.0 with feedback; topic-10 baseline. \url{https://www.letta.com/blog/skill-learning/} Archived 2026-10-05.}
+}
+
+@misc{letta2025continuallearning,
+  title={Continual Learning in Token Space},
+  author={{Letta}}, year={2025},
+  note={Letta technical report (company blog, not peer-reviewed). (theta,C) formalization; topic-10 theory anchor. \url{https://www.letta.com/blog/continual-learning/} Archived 2026-10-05.}
+}
+
+@misc{letta2026contextrepos,
+  title={Introducing Context Repositories: Git-based Memory for Coding Agents},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). Git-versioned memory; worktree-concurrent subagents. \url{https://www.letta.com/blog/context-repositories/} Archived 2026-10-05.}
+}
+
+@misc{letta2026constitution,
+  title={Context Constitution},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). Living principles doc for experiential agents. \url{https://www.letta.com/blog/context-constitution/} Archived 2026-10-05.}
+}
+
+@misc{letta2026redteam,
+  title={Red-teaming the Context Constitution: Auditing Models as Experiential {AI} Agents},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). 17-tenet adversarial audit; ephemeral self-conception. \url{https://www.letta.com/blog/red-teaming/} Archived 2026-10-05.}
+}
+
+@misc{letta2026memorymodels,
+  title={Memory Models: Towards Agents That Learn},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). Memory-native RL; multi-model memory-outlives-models. \url{https://www.letta.com/blog/towards-agents-that-learn/} Archived 2026-10-05.}
+}
+
+@misc{letta2026trajectory,
+  title={Trajectory: A Standard Format for Agent Experience Data},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). Cross-harness normalization; ~5x token cut. \url{https://www.letta.com/blog/trajectory/} Archived 2026-10-05.}
+}
+
+@misc{letta2026prodmemory,
+  title={Evaluating Memory in Production Agents},
+  author={{Letta}}, year={2026},
+  note={Letta technical report (company blog, not peer-reviewed). Context-Bench V2; usage-vs-generation split. \url{https://www.letta.com/blog/evaluating-memory-in-production-agents/} Archived 2026-10-05.}
 }
